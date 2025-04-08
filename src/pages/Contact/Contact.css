@@ -1,0 +1,8 @@
+/* ContactPage.css */
+.contact-page {
+    min-height: 70vh;
+  }
+  
+  .contact-page .list-group-item {
+    background: transparent;
+  }

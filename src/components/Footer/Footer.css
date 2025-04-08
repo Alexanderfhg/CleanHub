@@ -1,0 +1,73 @@
+/* Estilos generales del footer */
+footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Iconos sociales */
+  .social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    margin-right: 0.75rem;
+  }
+  
+  .social-icons a:hover {
+    background-color: #4CAF50;
+    color: white !important;
+    transform: translateY(-3px);
+  }
+  
+  /* Enlaces */
+  footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: #4CAF50 !important;
+  }
+  
+  /* Items de lista */
+  .list-group-item {
+    padding-left: 0;
+    padding-right: 0;
+    background: transparent !important;
+  }
+  
+  .list-group-item:hover {
+    color: #4CAF50 !important;
+    background: transparent !important;
+  }
+  
+  /* Formulario newsletter */
+  footer .form-control {
+    padding: 0.75rem;
+  }
+  
+  footer .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(244, 245, 244, 0.25);
+    border-color: #4CAF50;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 767.98px) {
+    footer .col-md-6 {
+      text-align: center !important;
+    }
+    
+    .legal-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .legal-links a {
+      margin-right: 0 !important;
+    }
+  }

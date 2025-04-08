@@ -1,0 +1,23 @@
+/* ContactForm.css */
+.contact-form-card {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 0.8rem;
+    border: none;
+  }
+  
+  .contact-form-card .form-control,
+  .contact-form-card .form-select {
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+  }
+  
+  .contact-form-card .form-control:focus,
+  .contact-form-card .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25);
+    border-color: #4CAF50;
+  }
+  
+  .contact-form-card textarea {
+    resize: none;
+  }
