@@ -6,24 +6,35 @@ import Contact from './pages/Contact/Contact';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
 import About from './pages/About/About';
-// import PrivateRoute from './components/PrivateRoute';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Admin from './pages/admin/Admin';
 
 function App() {
-  return (
-    <AuthProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </Router>
-    </AuthProvider>
-  );
+	return (
+		<AuthProvider>
+			<Router>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/products" element={<Products />} />
+					<Route path="/contact" element={<Contact />} />
+					<Route path="/register" element={<Register />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/products" element={<Products />} />
+					<Route path="/about" element={<About />} />
+          <Route path="/admin" element={<Admin />} />
+
+					{/* <Route
+						path="/admin"
+						element={
+							<PrivateRoute>
+								<Admin />
+							</PrivateRoute>
+						}
+					></Route> */}
+				</Routes>
+			</Router>
+		</AuthProvider>
+	);
 }
 
 export default App;

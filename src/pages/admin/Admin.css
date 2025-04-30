@@ -1,0 +1,28 @@
+.admin-page {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+  }
+  
+  .sidebar {
+    min-height: 100vh;
+  }
+  
+  .stat-card {
+    transition: transform 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .nav-pills .nav-link {
+    color: white;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+  
+  .nav-pills .nav-link.active {
+    background-color: #4CAF50 !important;
+  }

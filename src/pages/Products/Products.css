@@ -1,21 +1,72 @@
-/* Products.css */
+/* Estilos generales de la página */
+.products-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tarjetas de producto */
 .product-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 0.8rem;
-    overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.product-image-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-image-wrapper img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image-wrapper img {
+  transform: scale(1.05);
+}
+
+/* Filtros */
+.filter-summary {
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+/* Rangos de precio */
+input[type="range"] {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #4CAF50;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+/* Rating */
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .product-card {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  
-  .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .product-image {
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  
-  .products-page {
-    min-height: 70vh;
-  }
+}

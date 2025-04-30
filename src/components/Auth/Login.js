@@ -5,8 +5,9 @@ import { FaEnvelope, FaLock, FaSignInAlt } from 'react-icons/fa';
 import AuthContext from '../../context/AuthContext';
 
 const Login = () => {
+	// En el componente Login, agregar al estado inicial:
 	const [formData, setFormData] = useState({
-		email: '',
+		email: localStorage.getItem('rememberedEmail') || '',
 		password: '',
 		rememberMe: false
 	});
@@ -61,7 +62,7 @@ const Login = () => {
 		setIsSubmitting(true);
 
 		try {
-			// Api call simulation
+			// Simulación de llamada a API
 			console.log('Logging in user:', {
 				email: formData.email,
 				password: formData.password
@@ -69,17 +70,29 @@ const Login = () => {
 
 			await new Promise((resolve) => setTimeout(resolve, 1500));
 
-			// Succesfull answer simulated
+			// Datos simulados de respuesta
 			const mockUser = {
 				id: '123',
 				name: 'Test User',
 				email: formData.email,
 				role: formData.email.includes('admin') ? 'admin' : 'viewer',
 				token: 'mock-jwt-token'
+				// Agregar más campos si es necesario
 			};
 
+			// Guardar en localStorage si "rememberMe" está activado
+			if (formData.rememberMe) {
+				localStorage.setItem('rememberedEmail', formData.email);
+			} else {
+				localStorage.removeItem('rememberedEmail');
+			}
+
+			// Llamar a la función login del contexto
 			login(mockUser);
-			navigate('/');
+
+			// Redirigir según el rol
+			const redirectPath = mockUser.role === 'admin' ? '/admin' : '/products';
+			navigate(redirectPath);
 		} catch (error) {
 			console.error('Login error:', error);
 			setSubmitError('Invalid email or password. Please try again.');
