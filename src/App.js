@@ -22,15 +22,6 @@ function App() {
 					<Route path="/products" element={<Products />} />
 					<Route path="/about" element={<About />} />
           <Route path="/admin" element={<Admin />} />
-
-					{/* <Route
-						path="/admin"
-						element={
-							<PrivateRoute>
-								<Admin />
-							</PrivateRoute>
-						}
-					></Route> */}
 				</Routes>
 			</Router>
 		</AuthProvider>
